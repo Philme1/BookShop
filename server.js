@@ -34,9 +34,3 @@ app.use("/books", require("./routes/books"));
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => console.log("Server Running"));
-
-// error: could not lock config file C:/Program Files/Git/mingw64/etc/gitconfig: Permission denied
-
-// git config --system core.autocrlf false
-
-// git config --global core.autocrlf false
