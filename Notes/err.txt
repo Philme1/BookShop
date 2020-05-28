@@ -1,0 +1,26 @@
+    REFACTORED CODES
+
+1. //Create Book: Handles the create logic; NB: we are now getting a String & no longer a file;
+router.post("/", upload.single("cover"), async (req, res) => {
+  const fileName = req.file != null ? req.file.filename : null
+  const { title, author, pageCount, description, publishDate } = req.body;
+  const book = new Book({
+    title,
+    author,
+    pageCount,
+    description,
+    coverImageName: fileName,
+    publishDate: new Date(publishDate)
+  });
+
+  try {
+    await book.save();
+    // res.redirect(`books/${book.id}`)
+    res.redirect("books");
+  } catch (err) {
+    if(book.coverImageName != null) {
+      removeBookCover(book.coverImageName)
+    }
+    renderNewPage(res, book, true);
+  }
+});

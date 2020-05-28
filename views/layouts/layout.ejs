@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+  <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+  <link id="main.css" rel="stylesheet" href="/stylesheet/main.css">
+  <title>Upload_Stack</title>
+</head>
+<body>
+  
+  <div class="container">
+    <%- include("../partials/headers.ejs") %>
+    <div class="innercontainer">
+      <%- include("../partials/errorMessage.ejs") %>
+      <%- body %>
+    </div>
+  </div>
+  
+  
+  <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+  <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+  <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+  <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+  <script src="/javascripts/fileUpload.js"></script>
+</body>
+</html>
